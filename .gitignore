@@ -1,0 +1,10 @@
+# Obsidian 会话状态与缓存（本机相关，不入库）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Obsidian 库内回收站
+.trash/
+
+# 系统文件
+.DS_Store
