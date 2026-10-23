@@ -34,6 +34,13 @@
 4. 评审讨论，按意见继续提交 → PR 自动纳入新提交
 5. CI 通过后选择一种方式合并；删除远程与本地功能分支，回 main 拉最新
 
+### push 和 PR 的边界（实操澄清）
+
+- `git push` 只做两件事：上传本地提交对象 + 移动远端分支指针，**它不发起任何合并**
+- 推送新分支后看到的 `remote: Create a pull request for ...` 只是 GitHub 的提示文案（附带网页链接），不是已创建了 PR
+- PR 是托管平台层面的功能，git 本身没有这个概念；真正触发合并的是在网页上点「Create pull request」和「Merge pull request」，之后远端 main 上才会出现合并提交（提交信息形如 `Merge pull request #1 from ...`）
+- 判断方法：只 push 不点合并，本地回 main 后 `git pull` 会毫无变化
+
 ### 三种合并方式（回收上一篇 --no-ff 的钩子）
 
 | 方式 | 效果 | 适用 |
